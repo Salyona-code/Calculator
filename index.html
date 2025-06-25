@@ -1,79 +1,80 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Streamer Revenue Calculator by Megamod</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Streamer Revenue Calculator</title>
+  <title>Мини-калькулятор</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      padding: 30px;
-      color: #222;
-    }
-    .container {
-      max-width: 500px;
-      margin: auto;
-      background: white;
+      margin: 0;
       padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      max-height: 450px;
+      box-sizing: border-box;
+      overflow: hidden;
     }
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
+
+    h1 {
+      margin-bottom: 16px;
+      font-size: 1.4rem;
     }
-    label {
-      display: block;
-      margin: 10px 0 5px;
-    }
+
     input {
-      width: 100%;
-      padding: 10px;
+      margin: 5px 0;
+      padding: 8px;
+      font-size: 1rem;
+      width: 200px;
       border: 1px solid #ccc;
       border-radius: 8px;
     }
-    .results {
-      margin-top: 20px;
-      background: #f1f3f5;
-      padding: 15px;
-      border-radius: 12px;
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
     }
-    .results p {
-      margin: 8px 0;
+
+    button:hover {
+      background-color: #357bd8;
+    }
+
+    #result {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>🎮 Streamer Revenue Calculator</h2>
-    <label for="viewers">Viewers per Stream</label>
-    <input type="number" id="viewers" value="500" />
+  <h1>Калькулятор</h1>
+  <input type="number" id="input1" placeholder="Число 1" />
+  <input type="number" id="input2" placeholder="Число 2" />
+  <button onclick="calculate()">Сложить</button>
+  <div id="result">Результат: —</div>
 
-    <label for="conversion">Conversion Rate (%)</label>
-    <input type="number" id="conversion" value="3" />
-
-    <label for="price">Item Price ($)</label>
-    <input type="number" id="price" value="10" />
-
-    <label for="streams">Streams per Month</label>
-    <input type="number" id="streams" value="8" />
-
-    <div class="results">
-      <p><strong>Buyers per Stream:</strong> <span id="buyers">15</span></p>
-      <p><strong>Revenue per Stream:</strong> $<span id=<h1>👋 Hello World!</h1>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
+  <script>
+    function calculate() {
+      const a = parseFloat(document.getElementById("input1").value);
+      const b = parseFloat(document.getElementById("input2").value);
+      if (!isNaN(a) && !isNaN(b)) {
+        document.getElementById("result").innerText = `Результат: ${a + b}`;
+      } else {
+        document.getElementById("result").innerText = "Введите два числа";
+      }
+    }
+  </script>
 </body>
 </html>
